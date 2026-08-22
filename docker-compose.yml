@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: gelombangmaya-ce
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - DATABASE_URL=mysql://gelombangmaya:gm_secret_pass@db:3306/gelombangmaya_db
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0
+    container_name: gelombangmaya-db
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root_secret_pass
+      MYSQL_DATABASE: gelombangmaya_db
+      MYSQL_USER: gelombangmaya
+      MYSQL_PASSWORD: gm_secret_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - gm_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "gelombangmaya", "-pgm_secret_pass"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  gm_db_data:
