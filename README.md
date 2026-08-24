@@ -1,6 +1,4 @@
-<div align="center">
-
-# 🌊 GelombangMaya (Community Edition)
+# GelombangMaya (Community Edition)
 ### Autonomous Threat Telemetry & SecOps Defense Platform
 
 [![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/License-PolyForm%20Noncommercial%201.0.0-rose.svg)](LICENSE)
@@ -11,51 +9,55 @@
 [![Drizzle ORM](https://img.shields.io/badge/Drizzle%20ORM-0.45-yellow.svg)](https://orm.drizzle.team/)
 [![Vitest](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)](https://vitest.dev/)
 
-**A lightweight, high-performance Security Information & Event Management (SIEM) and Threat Telemetry platform created by Genuine-FancyBear.**
+A lightweight, high-performance Security Information and Event Management (SIEM) and threat telemetry platform created by Genuine-FancyBear.
 
-[Key Features](#-key-features) •
-[Architecture](#-architecture) •
-[Quickstart](#-quickstart-guide) •
-[Log Forwarder](#-endpoint-agent-gm-forwarderpy) •
-[Detection Rules](#-detection-heuristics-ruleset) •
-[License & Terms](#-license--commercial-terms)
-
-</div>
+[Key Features](#key-features) | [Demo](#demo) | [Architecture](#architecture) | [Quickstart](#quickstart-guide) | [Log Forwarder](#endpoint-agent-gm-forwarderpy) | [Detection Rules](#detection-heuristics-ruleset) | [License & Terms](#license--commercial-terms)
 
 ---
 
-## 🌟 Overview
+## Overview
 
-**GelombangMaya Community Edition (CE)** is built for security engineers, pentesting practitioners, homelab enthusiasts, and devops teams who need immediate, actionable threat detection and telemetry analysis without the heavy resource footprint of legacy SIEM suites.
+GelombangMaya Community Edition (CE) is built for security engineers, penetration testing practitioners, homelab environments, and DevOps teams that require immediate, actionable threat detection and telemetry analysis without the heavy resource overhead of traditional enterprise SIEM systems.
 
-It delivers real-time event streaming, heuristic rule evaluation, behavioral velocity thresholds, threat intelligence correlation, and one-click incident containment commands out of the box.
+It provides real-time event ingestion, heuristic rule evaluation, velocity-based behavioral thresholds, threat intelligence IOC correlation, and containment generation out of the box.
 
 ---
 
-## ⚡ Key Features
+## Demo
 
-* **Command Center & Live Telemetry HUD**: Monitor 24-hour ingestion volumes, active attacker IPs, top log sources, and system telemetry in real time.
+<!-- You can insert a video demo here. GitHub supports embedding MP4 videos directly by uploading in issue/PR or referencing an animated GIF/WebP asset. -->
+
+*Live Dashboard & Telemetry Streaming Demo:*
+
+*(Upload your demo video / animated GIF here)*
+
+---
+
+## Key Features
+
+* **Command Center & Live Telemetry HUD**: Monitor 24-hour ingestion volume, active attacker IP addresses, top log sources, and endpoint status in real time.
 * **Autonomous Detection Heuristics Engine**:
-  * **Pattern Matching**: Catch SQLi, XSS, Path Traversal, `/etc/shadow` reads, and `sudo` privilege escalations using regex.
-  * **Behavioral Thresholds**: Detect SSH brute-forcing and credential password sprays based on sliding time windows.
-  * **Threat Intel IOC Correlation**: Cross-reference incoming logs against active IP, domain, hash, and URL blacklists.
-* **Incident Triage Queue**: Seamless workflow (`Open` ➔ `Acknowledged` ➔ `Resolved` ➔ `False Positive`) with CSV reporting.
-* **1-Click Firewall Containment Assistant**: Instantly generate host-isolation syntax for `iptables`, `UFW`, `nftables`, and `AWS Network ACLs`.
-* **Zero-Dependency Python Shipper (`gm-forwarder.py`)**: Shipped using only Python 3 standard library (`urllib`, `re`, `socket`) — no `pip install` required!
+  * **Pattern Matching**: Detect SQLi, XSS, Path Traversal, sensitive file access (`/etc/shadow`, `/etc/passwd`), and `sudo` privilege escalation via regular expressions.
+  * **Behavioral Thresholds**: Detect SSH brute force attacks and credential password spraying using sliding time windows.
+  * **Threat Intel IOC Correlation**: Cross-reference incoming logs against active IP, domain, hash, and URL threat lists.
+* **Incident Triage Queue**: Structured incident lifecycle management (`Open` -> `Acknowledged` -> `Resolved` -> `False Positive`) with exportable reports.
+* **1-Click Firewall Containment Assistant**: Instantly generate host-isolation commands for `iptables`, `ufw`, `nftables`, and `AWS Network ACLs`.
+* **Telemetry Data Purge & Reset**: Built-in 1-click reset interface to purge events, alerts, and rule hit counters after simulation drills.
+* **Zero-Dependency Python Shipper (`gm-forwarder.py`)**: Shipped using only Python 3 standard library (`urllib`, `re`, `socket`, `subprocess`) — no external packages required.
 * **Endpoint Fleet Monitor**: Live tracking of forwarder agents, heartbeat monitoring, and automated stale detection.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart TD
-    subgraph Endpoints ["🖥️ Monitored Endpoints & Nodes"]
-        A1["Linux Server / Node\n(syslog, auth.log)"] -->|gm-forwarder.py| INGEST["tRPC Ingestion Engine\n(/api/trpc/siem.ingest)"]
+    subgraph Endpoints ["Monitored Endpoints & Nodes"]
+        A1["Linux Server / Node\n(syslog, auth.log, journald)"] -->|gm-forwarder.py| INGEST["tRPC Ingestion Engine\n(/api/trpc/siem.ingest)"]
         A2["Web Server\n(Nginx / Apache logs)"] -->|gm-forwarder.py| INGEST
     end
 
-    subgraph CoreEngine ["⚡ GelombangMaya Core Engine"]
+    subgraph CoreEngine ["GelombangMaya Core Engine"]
         INGEST --> PIPE["Detection Pipeline\n(evaluateEvent)"]
         PIPE --> R1["Pattern Matcher\n(Regex Heuristics)"]
         PIPE --> R2["Velocity Thresholds\n(Time-Window Sliding)"]
@@ -64,7 +66,7 @@ flowchart TD
         PIPE --> DB[("MySQL / MariaDB\n(Drizzle ORM)")]
     end
 
-    subgraph SOCDashboard ["🛡️ SecOps Command Center (React 19)"]
+    subgraph SOCDashboard ["SecOps Command Center (React 19)"]
         DB --> UI1["Live Telemetry Stream"]
         DB --> UI2["Incident Triage & Containment"]
         DB --> UI3["Detection Rules Manager"]
@@ -74,19 +76,19 @@ flowchart TD
 
 ---
 
-## 🚀 Quickstart Guide
+## Quickstart Guide
 
 ### Option 1: Docker Compose (Recommended)
 
-Run GelombangMaya and MySQL with a single command:
+Run GelombangMaya and MariaDB with a single command:
 
 ```bash
-git clone https://github.com/Genuine-FancyBear/gelombangmaya-community.git
+git clone https://github.com/elektrika-cloud/gelombangmaya-community.git
 cd gelombangmaya-community
 docker compose up -d
 ```
 
-Open your browser at **`http://localhost:3000`**. The default database schema and detection rules (`GM-0001` - `GM-0008`) will seed automatically on first boot!
+Access the dashboard at `http://localhost:3000`. The default database schema and detection rules (`GM-0001` - `GM-0008`) seed automatically on initial launch.
 
 ---
 
@@ -100,7 +102,7 @@ Open your browser at **`http://localhost:3000`**. The default database schema an
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/Genuine-FancyBear/gelombangmaya-community.git
+   git clone https://github.com/elektrika-cloud/gelombangmaya-community.git
    cd gelombangmaya-community
    ```
 
@@ -116,15 +118,20 @@ Open your browser at **`http://localhost:3000`**. The default database schema an
    Update `.env` with your database credentials:
    ```env
    PORT=3000
-   DATABASE_URL="mysql://gelombangmaya:secretpassword@localhost:3306/gelombangmaya_db"
+   DATABASE_URL="mysql://gelombangmaya:secretpassword@127.0.0.1:3306/gelombang_maya"
    ```
 
-4. **Start Development Server**:
+4. **Initialize Database (MariaDB/MySQL)**:
+   ```bash
+   sudo mysql -e "CREATE DATABASE IF NOT EXISTS gelombang_maya; CREATE USER IF NOT EXISTS 'gelombangmaya'@'localhost' IDENTIFIED BY 'secretpassword'; CREATE USER IF NOT EXISTS 'gelombangmaya'@'127.0.0.1' IDENTIFIED BY 'secretpassword'; GRANT ALL PRIVILEGES ON gelombang_maya.* TO 'gelombangmaya'@'localhost'; GRANT ALL PRIVILEGES ON gelombang_maya.* TO 'gelombangmaya'@'127.0.0.1'; FLUSH PRIVILEGES;"
+   ```
+
+5. **Start Development Server**:
    ```bash
    npm run dev
    ```
 
-5. **Build for Production**:
+6. **Build for Production**:
    ```bash
    npm run build
    npm start
@@ -132,20 +139,21 @@ Open your browser at **`http://localhost:3000`**. The default database schema an
 
 ---
 
-## 📡 Endpoint Agent (`gm-forwarder.py`)
+## Endpoint Agent (`gm-forwarder.py`)
 
-GelombangMaya includes a lightweight log forwarder agent in `scripts/gm-forwarder.py`. It runs on any Linux distribution with **Python 3 standard library only**.
+GelombangMaya includes a lightweight log forwarder agent in `scripts/gm-forwarder.py`. It runs on any Linux distribution with Python 3 standard library only.
 
 ### Quick Run:
 ```bash
-python3 scripts/gm-forwarder.py \
-    --server http://localhost:3000 \
-    --name prod-web-01 \
-    --file /var/log/auth.log \
-    --source sshd
+sudo python3 scripts/gm-forwarder.py --server http://localhost:3000
 ```
 
 ### Production Systemd Service (`/etc/systemd/system/gm-forwarder.service`):
+```bash
+sudo python3 scripts/gm-forwarder.py --server http://localhost:3000 --install-service
+```
+
+Manual systemd configuration:
 ```ini
 [Unit]
 Description=GelombangMaya Endpoint Log Forwarder Agent
@@ -155,7 +163,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/opt/gelombangmaya
-ExecStart=/usr/bin/python3 /opt/gelombangmaya/scripts/gm-forwarder.py --server http://your-siem-ip:3000 --name prod-web-01 --file /var/log/auth.log --source sshd
+ExecStart=/usr/bin/python3 /opt/gelombangmaya/scripts/gm-forwarder.py --server http://your-siem-ip:3000 --name prod-node-01
 Restart=always
 RestartSec=5
 
@@ -163,7 +171,7 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
-Enable and start:
+Enable and start the service:
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable --now gm-forwarder
@@ -171,24 +179,24 @@ sudo systemctl enable --now gm-forwarder
 
 ---
 
-## 🛡️ Detection Heuristics Ruleset
+## Detection Heuristics Ruleset
 
 | Rule ID | Title | Mechanism | Default Action |
 | :--- | :--- | :--- | :--- |
-| **`GM-0001`** | **SSH Brute Force** | Threshold | 5+ auth failures from 1 IP in 5 mins |
-| **`GM-0002`** | **Privilege Escalation** | Pattern Match | Detects `sudo su root` or root shell execution |
-| **`GM-0003`** | **Web Attack Signature** | Pattern Match | Detects SQLi (`OR 1=1`), XSS, and Path Traversal |
-| **`GM-0004`** | **Known Malicious IOC** | Threat Intel | Correlates against active IOC repository |
-| **`GM-0005`** | **Account Password Spray**| Threshold | 10+ auth failures on 1 user in 10 mins |
-| **`GM-0006`** | **Sensitive File Access** | Pattern Match | Detects access to `/etc/shadow`, `/etc/passwd`, `.pem` |
-| **`GM-0007`** | **New Account Created**   | Pattern Match | Detects `useradd`, `adduser`, `net user /add` |
-| **`GM-0008`** | **Critical Service Error**| Pattern Match | Detects `panic`, `fatal`, `segfault`, `out of memory` |
+| `GM-0001` | SSH Brute Force | Threshold | 5+ auth failures from 1 IP in 5 minutes |
+| `GM-0002` | Privilege Escalation | Pattern Match | Detects sudo su root or root shell execution |
+| `GM-0003` | Web Attack Signature | Pattern Match | Detects SQLi, XSS, and Path Traversal patterns |
+| `GM-0004` | Known Malicious IOC | Threat Intel | Correlates against active IOC database |
+| `GM-0005` | Account Password Spray | Threshold | 10+ auth failures on 1 user in 10 minutes |
+| `GM-0006` | Sensitive File Access | Pattern Match | Detects access to /etc/shadow, /etc/passwd, .pem |
+| `GM-0007` | New Account Created | Pattern Match | Detects useradd, adduser, net user /add |
+| `GM-0008` | Critical Service Error | Pattern Match | Detects panic, fatal, segfault, out of memory |
 
 ---
 
-## 🧪 Testing & Verification
+## Testing and Verification
 
-Run the built-in test suite:
+Run the test suite:
 
 ```bash
 # Type check
@@ -197,28 +205,26 @@ npm run check
 # Linter
 npm run lint
 
-# Vitest unit test suite
+# Unit test suite
 npm run test
 ```
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions, bug reports, and rule improvements are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on submitting pull requests.
+Contributions, issue reports, and rule improvements are welcome. Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 ---
 
-## 📄 License & Commercial Terms
+## License & Commercial Terms
 
 This software is licensed under the **[PolyForm Noncommercial License 1.0.0](LICENSE)**.
 
-* **You CAN**: Freely view, study, fork, modify, and run this project for personal, educational, research, and non-commercial security testing purposes.
-* **You CANNOT**: Sell, resell, rent, lease, sublicense, or monetize this software, its derivative works, or provide it as a paid commercial managed service.
+* **Permitted Use**: You may freely inspect, study, fork, modify, and run this project for personal, educational, research, and non-commercial security testing purposes.
+* **Prohibited Use**: You may not sell, resell, rent, lease, sublicense, monetize this software or its derivative works, or provide it as a paid commercial managed service.
 * **Commercial Inquiries**: For commercial licensing, enterprise deployment rights, or custom partnerships, contact **Genuine-FancyBear**.
 
 ---
 
-<div align="center">
-  <sub>Authored by <strong>Genuine-FancyBear (little brother)</strong></sub>
-</div>
+Authored by Genuine-FancyBear (little brother).

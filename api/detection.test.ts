@@ -67,7 +67,7 @@ describe("GelombangMaya Detection Ruleset & Heuristics", () => {
       const cfg = JSON.parse(rule!.config);
       const regex = new RegExp(cfg.pattern, "i");
 
-      expect(regex.test("useradd -m -s /bin/bash hidden_elamar")).toBe(true);
+      expect(regex.test("useradd -m -s /bin/bash backdoor_user")).toBe(true);
       expect(regex.test("adduser attacker_user")).toBe(true);
       expect(regex.test("net user evil_admin Password123! /add")).toBe(true);
       expect(regex.test("systemctl restart nginx")).toBe(false);

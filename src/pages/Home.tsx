@@ -202,7 +202,7 @@ export default function Home() {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
             <span>GelombangMaya Telemetry Engine</span>
             <span>•</span>
-            <span>The Hidden Elamar Cyber Defense Operations</span>
+            <span>SecOps Threat Defense Operations</span>
           </div>
           <div className="flex items-center gap-3">
             <span>Protocol: tRPC v11 / Drizzle ORM / Hono</span>

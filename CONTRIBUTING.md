@@ -1,21 +1,21 @@
 # Contributing to GelombangMaya Community Edition
 
-Welcome to **GelombangMaya Community Edition (CE)**!
+Welcome to GelombangMaya Community Edition (CE).
 
 ---
 
-## 🛡️ Code of Conduct
+## Code of Conduct
 * Treat fellow contributors and security researchers with mutual respect.
 * Focus on constructive code reviews, reproducible testing, and clean commits.
 * Keep offensive tools and detection heuristics ethical and responsible.
 
 ---
 
-## 🛠️ Development Workflow
+## Development Workflow
 
 1. **Fork & Clone**:
    ```bash
-   git clone https://github.com/Genuine-FancyBear/gelombangmaya-community.git
+   git clone https://github.com/elektrika-cloud/gelombangmaya-community.git
    cd gelombangmaya-community
    ```
 
@@ -27,7 +27,7 @@ Welcome to **GelombangMaya Community Edition (CE)**!
 3. **Configure Environment**:
    ```bash
    cp .env.example .env
-   # Edit .env to set your local MySQL connection
+   # Edit .env to set your local MySQL/MariaDB connection
    ```
 
 4. **Start Development Server**:
@@ -46,7 +46,7 @@ Welcome to **GelombangMaya Community Edition (CE)**!
 
 ---
 
-## 💡 Adding New Detection Rules
+## Adding New Detection Rules
 If you are contributing new threat detection heuristics:
 1. Ensure the rule follows the `GM-XXXX` naming convention.
 2. Add comprehensive unit test cases in `api/detection.test.ts` with realistic attack log payloads.
@@ -54,5 +54,5 @@ If you are contributing new threat detection heuristics:
 
 ---
 
-## 📄 Licensing Agreement
-By contributing to this repository, you agree that your contributions will be licensed under the **PolyForm Noncommercial License 1.0.0**.
+## Licensing Agreement
+By contributing to this repository, you agree that your contributions will be licensed under the PolyForm Noncommercial License 1.0.0.
