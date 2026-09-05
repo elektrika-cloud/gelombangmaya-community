@@ -10,7 +10,7 @@
 [![Drizzle ORM](https://img.shields.io/badge/Drizzle%20ORM-0.45-yellow.svg)](https://orm.drizzle.team/)
 [![Vitest](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)](https://vitest.dev/)
 
-A lightweight, high-performance source-available Security Information and Event Management (SIEM) and threat telemetry platform engineered by **Elektrika Cloud** and maintained by **[@hidup0bersahaja](https://github.com/hidup0bersahaja)**.
+A lightweight, high-performance source-available Security Information and Event Management (SIEM) and threat telemetry platform maintained by **[@hidup0bersahaja](https://github.com/hidup0bersahaja)**.
 
 [Key Features](#key-features) | [Architecture](ARCHITECTURE.md) | [Quickstart](#quickstart-guide) | [Log Forwarder](#endpoint-agent-gm-forwarderpy) | [Detection Rules](#detection-heuristics-ruleset) | [License & Terms](COMMERCIAL-TERMS.md)
 
@@ -230,9 +230,9 @@ This software is licensed under the **[PolyForm Noncommercial License 1.0.0](LIC
 
 ## 🏷️ Trademark Policy
 
-**GelombangMaya™** is a trademark of **Elektrika Cloud**. All rights reserved.
+**GelombangMaya™** is maintained by **[@hidup0bersahaja](https://github.com/hidup0bersahaja)**. All rights reserved.
 
 ---
 
-Maintained by **[@hidup0bersahaja](https://github.com/hidup0bersahaja)** & **[Elektrika Cloud](https://github.com/elektrika-cloud)**.
+Maintained by **[@hidup0bersahaja](https://github.com/hidup0bersahaja)** (`jebatzh@gmail.com`) & Contributors.
 

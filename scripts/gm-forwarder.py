@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 GelombangMaya Production Telemetry Forwarder Agent
-Author: Elektrika Cloud & Contributors
+Author: @hidup0bersahaja <jebatzh@gmail.com> & Contributors
 
 Production-grade real-time endpoint collector:
 - Hooks into systemd journalctl (sshd, sudo, nginx) AND tails physical log files.

@@ -6,10 +6,10 @@
 
 ## 🏷️ Trademark Policy
 
-**GelombangMaya™** and the GelombangMaya logo are trademarks owned by **Elektrika Cloud**. 
+**GelombangMaya™** and the GelombangMaya logo are trademarks of the GelombangMaya Project, maintained by **[@hidup0bersahaja](https://github.com/hidup0bersahaja)**.
 
 * You may refer to the name **GelombangMaya** to describe your use of this software or its compatibility.
-* You may **NOT** use the name **GelombangMaya**, **Elektrika Cloud**, or confusingly similar variations as part of your company name, product name, domain name, or commercial managed service offering without prior written authorization from Elektrika Cloud.
+* You may **NOT** use the name **GelombangMaya** or confusingly similar variations as part of your company name, product name, domain name, or commercial managed service offering without prior written authorization from the maintainer (`jebatzh@gmail.com`).
 
 ---
 
@@ -28,15 +28,14 @@ If your organization, financial institution, government agency, or security cons
 2. **Enterprise SOC Features**: Multi-tenancy isolation, SOAR active containment playbooks, automated ClickHouse analytics pipelines, and 2-way RPC endpoint telemetry forwarders.
 3. **Enterprise SLA & Support**: Custom threat heuristic development, compliance auditing (e.g., BNM RMiT, ISO 27001, CIS Controls), and dedicated engineering assistance.
 
-Please contact our enterprise licensing team directly:
+Please contact the maintainer directly:
 
-* **Entity:** Elektrika Cloud
+* **Maintainer:** [@hidup0bersahaja](https://github.com/hidup0bersahaja)
 * **Commercial Inquiries & Licensing:** `jebatzh@gmail.com`
-* **Maintainer GitHub:** [@hidup0bersahaja](https://github.com/hidup0bersahaja)
-* **Organization:** [@elektrika-cloud](https://github.com/elektrika-cloud)
 
 ---
 
 ## 🛡️ Patent Defense Notice
 
-The software is provided with a limited patent license under the terms of the PolyForm Noncommercial License 1.0.0. Any patent infringement claims initiated against Elektrika Cloud, the maintainers, or fellow contributors will result in the immediate and automatic termination of all patent licenses granted under these terms.
+The software is provided with a limited patent license under the terms of the PolyForm Noncommercial License 1.0.0. Any patent infringement claims initiated against the maintainer or fellow contributors will result in the immediate and automatic termination of all patent licenses granted under these terms.
+

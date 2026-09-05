@@ -2,7 +2,7 @@
   "name": "gelombangmaya-community",
   "description": "GelombangMaya Community Edition — Source-Available Threat Telemetry & SecOps Defense Platform",
   "version": "1.0.1",
-  "author": "Elektrika Cloud & Contributors",
+  "author": "hidup0bersahaja <jebatzh@gmail.com>",
   "license": "PolyForm-Noncommercial-1.0.0",
   "type": "module",
   "scripts": {
