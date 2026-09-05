@@ -224,7 +224,7 @@ This software is licensed under the **[PolyForm Noncommercial License 1.0.0](LIC
 
 * **Permitted Use**: You may freely inspect, study, fork, modify, deploy, and run this project for personal homelabs, educational coursework, academic research, and non-commercial security testing purposes.
 * **Commercial Use**: Using this software for revenue-generating commercial operations, enterprise production environments, managed SOC services, or paid appliances is strictly prohibited under this license.
-* **Commercial Licensing & Enterprise Rights**: For commercial licensing, enterprise multi-tenancy, custom threat rule development, and SLA support, please consult **[COMMERCIAL-TERMS.md](COMMERCIAL-TERMS.md)** or contact `licensing@elektrika.cloud`.
+* **Commercial Licensing & Enterprise Rights**: For commercial licensing, enterprise multi-tenancy, custom threat rule development, and SLA support, please consult **[COMMERCIAL-TERMS.md](COMMERCIAL-TERMS.md)** or contact `jebatzh@gmail.com`.
 
 ---
 

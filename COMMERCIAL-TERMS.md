@@ -31,7 +31,7 @@ If your organization, financial institution, government agency, or security cons
 Please contact our enterprise licensing team directly:
 
 * **Entity:** Elektrika Cloud
-* **Commercial Inquiries & Licensing:** `licensing@elektrika.cloud`
+* **Commercial Inquiries & Licensing:** `jebatzh@gmail.com`
 * **Maintainer GitHub:** [@hidup0bersahaja](https://github.com/hidup0bersahaja)
 * **Organization:** [@elektrika-cloud](https://github.com/elektrika-cloud)
 
