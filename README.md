@@ -2,6 +2,7 @@
 ### Autonomous Threat Telemetry & SecOps Defense Platform
 
 [![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/License-PolyForm%20Noncommercial%201.0.0-rose.svg)](LICENSE)
+[![Source: Available](https://img.shields.io/badge/Source-Available-blueviolet.svg)](COMMERCIAL-TERMS.md)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-cyan.svg)](https://react.dev/)
 [![tRPC](https://img.shields.io/badge/tRPC-v11-indigo.svg)](https://trpc.io/)
@@ -9,9 +10,9 @@
 [![Drizzle ORM](https://img.shields.io/badge/Drizzle%20ORM-0.45-yellow.svg)](https://orm.drizzle.team/)
 [![Vitest](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)](https://vitest.dev/)
 
-A lightweight, high-performance Security Information and Event Management (SIEM) and threat telemetry platform created by Genuine-FancyBear.
+A lightweight, high-performance source-available Security Information and Event Management (SIEM) and threat telemetry platform engineered by **Elektrika Cloud** and maintained by **[@hidup0bersahaja](https://github.com/hidup0bersahaja)**.
 
-[Key Features](#key-features) | [Demo](#demo) | [Architecture](#architecture) | [Quickstart](#quickstart-guide) | [Log Forwarder](#endpoint-agent-gm-forwarderpy) | [Detection Rules](#detection-heuristics-ruleset) | [License & Terms](#license--commercial-terms)
+[Key Features](#key-features) | [Architecture](ARCHITECTURE.md) | [Quickstart](#quickstart-guide) | [Log Forwarder](#endpoint-agent-gm-forwarderpy) | [Detection Rules](#detection-heuristics-ruleset) | [License & Terms](COMMERCIAL-TERMS.md)
 
 ---
 
@@ -219,12 +220,19 @@ Contributions, issue reports, and rule improvements are welcome. Please refer to
 
 ## License & Commercial Terms
 
-This software is licensed under the **[PolyForm Noncommercial License 1.0.0](LICENSE)**.
+This software is licensed under the **[PolyForm Noncommercial License 1.0.0](LICENSE)** (Source-Available, Free for Noncommercial Use).
 
-* **Permitted Use**: You may freely inspect, study, fork, modify, and run this project for personal, educational, research, and non-commercial security testing purposes.
-* **Prohibited Use**: You may not sell, resell, rent, lease, sublicense, monetize this software or its derivative works, or provide it as a paid commercial managed service.
-* **Commercial Inquiries**: For commercial licensing, enterprise deployment rights, or custom partnerships, contact **Genuine-FancyBear**.
+* **Permitted Use**: You may freely inspect, study, fork, modify, deploy, and run this project for personal homelabs, educational coursework, academic research, and non-commercial security testing purposes.
+* **Commercial Use**: Using this software for revenue-generating commercial operations, enterprise production environments, managed SOC services, or paid appliances is strictly prohibited under this license.
+* **Commercial Licensing & Enterprise Rights**: For commercial licensing, enterprise multi-tenancy, custom threat rule development, and SLA support, please consult **[COMMERCIAL-TERMS.md](COMMERCIAL-TERMS.md)** or contact `licensing@elektrika.cloud`.
 
 ---
 
-Authored by Genuine-FancyBear (little brother).
+## 🏷️ Trademark Policy
+
+**GelombangMaya™** is a trademark of **Elektrika Cloud**. All rights reserved.
+
+---
+
+Maintained by **[@hidup0bersahaja](https://github.com/hidup0bersahaja)** & **[Elektrika Cloud](https://github.com/elektrika-cloud)**.
+

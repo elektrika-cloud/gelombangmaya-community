@@ -54,5 +54,11 @@ If you are contributing new threat detection heuristics:
 
 ---
 
-## Licensing Agreement
-By contributing to this repository, you agree that your contributions will be licensed under the PolyForm Noncommercial License 1.0.0.
+## Licensing Agreement & Contributor License Agreement (CLA)
+
+By submitting a Pull Request, issue, or contributing code, documentation, or rules to this repository, you agree to the following terms:
+
+1. **License Grant:** You agree that your contributions will be licensed to users under the terms of the **PolyForm Noncommercial License 1.0.0**.
+2. **Copyright Assignment & Relicensing Rights:** You hereby grant **Elektrika Cloud** and the maintainers a perpetual, worldwide, non-exclusive, royalty-free, irrevocable, sublicensable license to use, reproduce, modify, display, sublicense, distribute, and relicense your contributions (in original or modified form) under any license terms, including commercial, dual-licensing, and proprietary enterprise licenses.
+3. **Original Work Certification:** You certify that the contributions represent your original creation, and that you possess the necessary legal authority to grant the aforementioned rights without violating any third-party intellectual property or employment agreements.
+

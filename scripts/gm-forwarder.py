@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 GelombangMaya Production Telemetry Forwarder Agent
-Author: Genuine-FancyBear
+Author: Elektrika Cloud & Contributors
 
 Production-grade real-time endpoint collector:
 - Hooks into systemd journalctl (sshd, sudo, nginx) AND tails physical log files.
@@ -20,6 +20,7 @@ import argparse
 import glob
 import json
 import os
+import platform
 import re
 import select
 import socket
@@ -281,7 +282,7 @@ def main():
 
     agent_meta = {
         "hostname": socket.gethostname(),
-        "os": f"{os.uname().sysname} {os.uname().release}",
+        "os": f"{platform.system()} {platform.release()}",
         "python": sys.version.split()[0],
     }
 

@@ -1,8 +1,8 @@
 {
   "name": "gelombangmaya-community",
-  "description": "GelombangMaya Community Edition — Open-Source Threat Telemetry & SecOps Defense Platform by Genuine-FancyBear",
+  "description": "GelombangMaya Community Edition — Source-Available Threat Telemetry & SecOps Defense Platform",
   "version": "1.0.1",
-  "author": "Genuine-FancyBear",
+  "author": "Elektrika Cloud & Contributors",
   "license": "PolyForm-Noncommercial-1.0.0",
   "type": "module",
   "scripts": {
